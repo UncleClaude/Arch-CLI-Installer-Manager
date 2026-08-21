@@ -12,11 +12,9 @@ optdepends=(
   'flatpak: for Flatpak package installation'
   'mlocate: for updating the locate database after installation'
 )
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/kantiankant/Omarchy_installers/archive/v${pkgver}.tar.gz")
-sha256sums=('bdd72b8b11cb69b072018ef037adfe878e8a6c7e4c1b0adfa28b208fc269bd04')
 
 package() {
-  cd "${srcdir}/Omarchy_installers-${pkgver}"
+  cd "${startdir}"
 
   install -Dm755 aur-installer.sh "${pkgdir}/usr/bin/aurfetch"
   install -Dm755 pacman-installer.sh "${pkgdir}/usr/bin/pacfetch"

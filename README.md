@@ -10,21 +10,23 @@ Welcome to **omarchy-installers**. This package is composed of three programs: `
 
 # 1.1: Installation
 
-### Automatic installation (From the AUR):
+### Build and install locally (recommended)
+
+The PKGBUILD builds directly from this repository's sources, so cloning and running `makepkg -si` always gets you the `installer` menu and `flatfetch` shown above.
+
+~~~bash
+git clone https://github.com/UncleClaude/Omarchy_installers.git
+cd Omarchy_installers
+makepkg -si
+~~~
+
+### AUR (may be out of date)
+
+`omarchy-installers` is also published on the AUR, tracking the original upstream repository. That package may not include the `installer` menu or `flatfetch` yet:
 
 ~~~bash
 yay -S omarchy-installers
 # OR
 paru -S omarchy-installers
-~~~
-
-### Manual installation
-
-Clone the repository, change your working directory to it, and run makepkg -si.
-
-~~~bash
-git clone https://github.com/kantiankant/Omarchy_installers.git  
-cd omarchy-installers
-makepkg -si
 ~~~
 
