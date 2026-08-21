@@ -1,14 +1,15 @@
 # Maintainer: Tony Tan <qwerasdnoob@gmail.com>
 pkgname=omarchy-installers
 pkgver=1.0.0
-pkgrel=3
-pkgdesc="A port of Omarchy's AUR and pacman package installers for Arch-based distros"
+pkgrel=4
+pkgdesc="A port of Omarchy's AUR, pacman, and Flatpak package installers for Arch-based distros"
 arch=('any')
 url="https://github.com/kantiankant/Omarchy_installers"
 license=('GPL3')
 depends=('fzf' 'pacman')
 optdepends=(
   'yay: for AUR package installation'
+  'flatpak: for Flatpak package installation'
   'mlocate: for updating the locate database after installation'
 )
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/kantiankant/Omarchy_installers/archive/v${pkgver}.tar.gz")
@@ -19,4 +20,6 @@ package() {
 
   install -Dm755 aur-installer.sh "${pkgdir}/usr/bin/aurfetch"
   install -Dm755 pacman-installer.sh "${pkgdir}/usr/bin/pacfetch"
+  install -Dm755 flatpak-installer.sh "${pkgdir}/usr/bin/flatfetch"
+  install -Dm755 installer.sh "${pkgdir}/usr/bin/installer"
 }
