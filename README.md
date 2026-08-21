@@ -30,3 +30,7 @@ yay -S omarchy-installers
 paru -S omarchy-installers
 ~~~
 
+# 1.2: Credits
+
+This is a fork of [kantiankant/Omarchy_installers](https://github.com/kantiankant/Omarchy_installers), which ported Omarchy's `pacfetch`/`aurfetch` TUI wrappers to other Arch-based distros and is packaged on the AUR by Tony Tan. This fork builds on that original work, adding the `installer` main menu and `flatfetch`.
+
