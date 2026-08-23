@@ -1,12 +1,15 @@
 
 # 1.0: Introduction
 
-Welcome to **omarchy-installers**. This package is composed of three programs: `pacfetch`, `aurfetch`, and `flatfetch`, plus a main menu, `installer`, that ties them together. These programs are ports of the TUI wrappers Omarchy uses for package installation, but now for every other Arch-based distribution.
+Welcome to **omarchy-installers**. This package is composed of three install programs (`pacfetch`, `aurfetch`, `flatfetch`), three matching management programs (`pacmanage`, `aurmanage`, `flatmanage`), plus a main menu, `installer`, that ties them all together. These programs are ports of the TUI wrappers Omarchy uses for package installation, but now for every other Arch-based distribution.
 
 *   **pacfetch:** Fetches packages from the official Arch repositories.
 *   **aurfetch:** Fetches packages from the Arch User Repository (AUR).
 *   **flatfetch:** Fetches packages from Flathub.
-*   **installer:** Main menu to pick between the three above; returns to the menu after each one finishes or is cancelled.
+*   **pacmanage:** Removes installed packages from the official Arch repositories.
+*   **aurmanage:** Removes installed AUR (foreign) packages.
+*   **flatmanage:** Removes installed Flatpak packages.
+*   **installer:** Main menu to pick between the three fetchers above, or an "Installed packages" submenu to manage what's already installed; returns to the menu after each action finishes or is cancelled.
 
 # 1.1: Installation
 

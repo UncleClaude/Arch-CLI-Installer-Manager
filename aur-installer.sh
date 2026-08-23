@@ -25,7 +25,8 @@ fi
 pkg_names=$(yay -Slqa | fzf "${fzf_args[@]}")
 
 if [[ -n "$pkg_names" ]]; then
-  echo "$pkg_names" | tr '\n' ' ' | xargs yay -S
+  mapfile -t pkgs <<< "$pkg_names"
+  yay -S "${pkgs[@]}"
 
   if command -v updatedb &>/dev/null; then
     sudo updatedb &

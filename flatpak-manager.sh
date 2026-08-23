@@ -1,0 +1,33 @@
+#!/bin/bash
+# Fuzzy-finder for removing installed Flatpak packages
+
+fzf_args=(
+  --multi
+  --delimiter '\t'
+  --with-nth '2,3'
+  --preview 'flatpak info {1} 2>/dev/null'
+  --preview-label='alt-p: toggle preview, alt-j/k: scroll, tab: multi-select'
+  --preview-label-pos='bottom'
+  --preview-window 'down:65%:wrap'
+  --bind 'alt-p:toggle-preview'
+  --bind 'alt-d:preview-half-page-down,alt-u:preview-half-page-up'
+  --bind 'alt-k:preview-up,alt-j:preview-down'
+  --color 'pointer:green,marker:green'
+  --header 'Installed Flatpak Packages - Select with Tab, Enter to remove'
+  --prompt 'Package: '
+)
+
+if ! command -v flatpak &>/dev/null; then
+  echo "Error: flatpak not found."
+  exit 1
+fi
+
+pkg_ids=$(flatpak list --app --columns=application,name,description | fzf "${fzf_args[@]}" | cut -f1)
+
+if [[ -n "$pkg_ids" ]]; then
+  mapfile -t pkgs <<< "$pkg_ids"
+  flatpak uninstall -y "${pkgs[@]}"
+
+  echo
+  gum spin --spinner "globe" --title "Done! Press any key to close..." -- bash -c 'read -n 1 -s'
+fi
