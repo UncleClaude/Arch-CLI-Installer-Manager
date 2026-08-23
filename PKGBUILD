@@ -1,10 +1,10 @@
-# Maintainer: Tony Tan <qwerasdnoob@gmail.com>
-pkgname=omarchy-installers
+# Maintainer: UncleClaude
+pkgname=archie
 pkgver=1.0.0
-pkgrel=5
-pkgdesc="A port of Omarchy's AUR, pacman, and Flatpak package installers for Arch-based distros"
+pkgrel=1
+pkgdesc="TUI installer and manager for pacman, AUR, and Flatpak packages on Arch-based distros"
 arch=('any')
-url="https://github.com/kantiankant/Omarchy_installers"
+url="https://github.com/UncleClaude/Archie"
 license=('GPL3')
 depends=('fzf' 'pacman')
 optdepends=(

@@ -1,7 +1,7 @@
 
 # 1.0: Introduction
 
-Welcome to **omarchy-installers**. This package is composed of three install programs (`pacfetch`, `aurfetch`, `flatfetch`), three matching management programs (`pacmanage`, `aurmanage`, `flatmanage`), plus a main menu, `installer`, that ties them all together. These programs are ports of the TUI wrappers Omarchy uses for package installation, but now for every other Arch-based distribution.
+Welcome to **Archie**, a TUI installer and manager for pacman, AUR, and Flatpak packages on any Arch-based distribution. It's composed of three install programs (`pacfetch`, `aurfetch`, `flatfetch`), three matching management programs (`pacmanage`, `aurmanage`, `flatmanage`), plus a main menu, `installer`, that ties them all together.
 
 *   **pacfetch:** Fetches packages from the official Arch repositories.
 *   **aurfetch:** Fetches packages from the Arch User Repository (AUR).
@@ -15,25 +15,14 @@ Welcome to **omarchy-installers**. This package is composed of three install pro
 
 ### Build and install locally (recommended)
 
-The PKGBUILD builds directly from this repository's sources, so cloning and running `makepkg -si` always gets you the `installer` menu and `flatfetch` shown above.
+The PKGBUILD builds directly from this repository's sources, so cloning and running `makepkg -si` always gets you the full `installer` menu shown above.
 
 ~~~bash
-git clone https://github.com/UncleClaude/Omarchy_installers.git
-cd Omarchy_installers
+git clone https://github.com/UncleClaude/Archie.git
+cd Archie
 makepkg -si
-~~~
-
-### AUR (may be out of date)
-
-`omarchy-installers` is also published on the AUR, tracking the original upstream repository. That package may not include the `installer` menu or `flatfetch` yet:
-
-~~~bash
-yay -S omarchy-installers
-# OR
-paru -S omarchy-installers
 ~~~
 
 # 1.2: Credits
 
-This is a fork of [kantiankant/Omarchy_installers](https://github.com/kantiankant/Omarchy_installers), which ported Omarchy's `pacfetch`/`aurfetch` TUI wrappers to other Arch-based distros and is packaged on the AUR by Tony Tan. This fork builds on that original work, adding the `installer` main menu and `flatfetch`.
-
+Archie began as a fork of [kantiankant/Omarchy_installers](https://github.com/kantiankant/Omarchy_installers), which first ported Omarchy's `pacfetch`/`aurfetch` TUI wrappers to other Arch-based distros and was packaged on the AUR by Tony Tan. That original work is the foundation this project is built on. Archie has since grown into its own project: a redesigned main menu, `flatfetch`, and a full "Installed packages" management suite (`pacmanage`/`aurmanage`/`flatmanage`).
