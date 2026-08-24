@@ -1,10 +1,10 @@
 # Maintainer: UncleClaude
-pkgname=archie
+pkgname=arch-cli-installer-manager
 pkgver=1.0.0
 pkgrel=1
-pkgdesc="TUI installer and manager for pacman, AUR, and Flatpak packages on Arch-based distros"
+pkgdesc="Arch CLI Installer & Manager - TUI installer and manager for pacman, AUR, and Flatpak packages on Arch-based distros"
 arch=('any')
-url="https://github.com/UncleClaude/Archie"
+url="https://github.com/UncleClaude/Arch-CLI-Installer-Manager"
 license=('GPL3')
 depends=('fzf' 'pacman')
 optdepends=(
@@ -12,6 +12,9 @@ optdepends=(
   'flatpak: for Flatpak package installation'
   'mlocate: for updating the locate database after installation'
 )
+provides=('omarchy-installers' 'archie')
+conflicts=('omarchy-installers' 'archie')
+replaces=('omarchy-installers' 'archie')
 
 package() {
   cd "${startdir}"

@@ -1,11 +1,11 @@
 #!/bin/bash
-# Main menu for Archie - pick a package source, run it, and land back here
-# when it finishes (or gets cancelled).
+# Main menu for Arch CLI Installer & Manager - pick a package source, run
+# it, and land back here when it finishes (or gets cancelled).
 
 fzf_args=(
   --no-multi
   --color 'pointer:green,marker:green'
-  --header 'Archie - Select a package source'
+  --header 'Arch CLI Installer & Manager - Select a package source'
   --prompt 'Select: '
 )
 

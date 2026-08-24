@@ -1,7 +1,7 @@
 
 # 1.0: Introduction
 
-Welcome to **Archie**, a TUI installer and manager for pacman, AUR, and Flatpak packages on any Arch-based distribution. It's composed of three install programs (`pacfetch`, `aurfetch`, `flatfetch`), three matching management programs (`pacmanage`, `aurmanage`, `flatmanage`), plus a main menu, `installer`, that ties them all together.
+Welcome to **Arch CLI Installer & Manager**, a TUI installer and manager for pacman, AUR, and Flatpak packages on any Arch-based distribution. It's composed of three install programs (`pacfetch`, `aurfetch`, `flatfetch`), three matching management programs (`pacmanage`, `aurmanage`, `flatmanage`), plus a main menu, `installer`, that ties them all together.
 
 *   **pacfetch:** Fetches packages from the official Arch repositories.
 *   **aurfetch:** Fetches packages from the Arch User Repository (AUR).
@@ -18,11 +18,18 @@ Welcome to **Archie**, a TUI installer and manager for pacman, AUR, and Flatpak 
 The PKGBUILD builds directly from this repository's sources, so cloning and running `makepkg -si` always gets you the full `installer` menu shown above.
 
 ~~~bash
-git clone https://github.com/UncleClaude/Archie.git
-cd Archie
+git clone https://github.com/UncleClaude/Arch-CLI-Installer-Manager.git
+cd Arch-CLI-Installer-Manager
 makepkg -si
+~~~
+
+If you previously built this project under an earlier name (`omarchy-installers` or `archie`), remove it first so pacman doesn't see two packages claiming the same files:
+
+~~~bash
+sudo pacman -R omarchy-installers
+# or: sudo pacman -R archie
 ~~~
 
 # 1.2: Credits
 
-Archie began as a fork of [kantiankant/Omarchy_installers](https://github.com/kantiankant/Omarchy_installers), which first ported Omarchy's `pacfetch`/`aurfetch` TUI wrappers to other Arch-based distros and was packaged on the AUR by Tony Tan. That original work is the foundation this project is built on. Archie has since grown into its own project: a redesigned main menu, `flatfetch`, and a full "Installed packages" management suite (`pacmanage`/`aurmanage`/`flatmanage`).
+Arch CLI Installer & Manager began as a fork of [kantiankant/Omarchy_installers](https://github.com/kantiankant/Omarchy_installers), which first ported Omarchy's `pacfetch`/`aurfetch` TUI wrappers to other Arch-based distros and was packaged on the AUR by Tony Tan. That original work is the foundation this project is built on. It has since grown into its own project: a redesigned main menu, `flatfetch`, and a full "Installed packages" management suite (`pacmanage`/`aurmanage`/`flatmanage`).
