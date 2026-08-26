@@ -9,7 +9,7 @@ Welcome to **Arch CLI Installer & Manager**, a TUI installer and manager for pac
 *   **pacmanage:** Removes installed packages from the official Arch repositories.
 *   **aurmanage:** Removes installed AUR (foreign) packages.
 *   **flatmanage:** Removes installed Flatpak packages.
-*   **sysupdate:** Updates pacman, AUR, and Flatpak packages in one pass.
+*   **sysupdate:** Updates pacman, AUR, and Flatpak packages in one pass, then offers to remove orphaned packages and clear the pacman cache.
 *   **installer:** Main menu to pick between the three fetchers above, an "Installed packages" submenu to manage what's already installed, or "Update system" to run `sysupdate`; returns to the menu after each action finishes or is cancelled.
 
 In any package list, press `ctrl-o` to open the highlighted package's page in your default browser, via `xdg-open` (its homepage for pacman, its AUR page for AUR packages, its Flathub page for Flatpaks). URLs shown in the preview pane are also highlighted so they're easy to spot.

@@ -6,7 +6,7 @@ pkgdesc="Arch CLI Installer & Manager - TUI installer and manager for pacman, AU
 arch=('any')
 url="https://github.com/UncleClaude/Arch-CLI-Installer-Manager"
 license=('GPL3')
-depends=('fzf' 'pacman')
+depends=('fzf' 'pacman' 'gum')
 optdepends=(
   'yay: for AUR package installation'
   'flatpak: for Flatpak package installation'
