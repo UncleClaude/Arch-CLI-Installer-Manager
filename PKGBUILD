@@ -1,6 +1,6 @@
 # Maintainer: UncleClaude
 pkgname=arch-cli-installer-manager
-pkgver=1.0.5
+pkgver=1.0.6
 pkgrel=1
 pkgdesc="Arch CLI Installer & Manager - TUI installer and manager for pacman, AUR, and Flatpak packages on Arch-based distros"
 arch=('any')
@@ -26,5 +26,6 @@ package() {
   install -Dm755 aur-manager.sh "${pkgdir}/usr/bin/aurmanage"
   install -Dm755 pacman-manager.sh "${pkgdir}/usr/bin/pacmanage"
   install -Dm755 flatpak-manager.sh "${pkgdir}/usr/bin/flatmanage"
+  install -Dm755 update.sh "${pkgdir}/usr/bin/sysupdate"
   install -Dm755 installer.sh "${pkgdir}/usr/bin/installer"
 }

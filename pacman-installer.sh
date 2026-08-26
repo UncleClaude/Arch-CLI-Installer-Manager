@@ -3,7 +3,9 @@
 
 fzf_args=(
   --multi
-  --preview 'pacman -Si {1} 2>/dev/null | sed -E '\''s@(https?://[^[:space:]]+)@\x1b]8;;\1\x1b\\\1\x1b]8;;\x1b\\@g'\'
+  --with-shell 'bash -c'
+  --ansi
+  --preview 'pacman -Si {1} 2>/dev/null | sed -E '\''s@(https?://[^[:space:]]+)@\x1b[1;36m\1\x1b[0m@g'\'
   --preview-label='alt-p: toggle preview, alt-j/k: scroll, tab: multi-select, ctrl-o: open homepage'
   --preview-label-pos='bottom'
   --preview-window 'down:65%:wrap'

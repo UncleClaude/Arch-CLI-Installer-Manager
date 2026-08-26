@@ -47,6 +47,7 @@ while true; do
     'AUR                (aurfetch)   - Arch User Repository' \
     'Flatpak            (flatfetch)  - Flathub' \
     'Installed packages - Manage what is already installed' \
+    'Update system      (sysupdate) - Update pacman, AUR, and Flatpak packages' \
     'Quit' | fzf "${fzf_args[@]}")
 
   case "$choice" in
@@ -61,6 +62,9 @@ while true; do
       ;;
     Installed*)
       manage_menu
+      ;;
+    Update*)
+      sysupdate
       ;;
     Quit* | "")
       exit 0
