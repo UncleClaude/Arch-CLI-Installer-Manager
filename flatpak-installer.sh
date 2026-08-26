@@ -5,13 +5,14 @@ fzf_args=(
   --multi
   --delimiter '\t'
   --with-nth '2,3'
-  --preview 'flatpak remote-info flathub {1} 2>/dev/null'
-  --preview-label='alt-p: toggle preview, alt-j/k: scroll, tab: multi-select'
+  --preview '{ flatpak remote-info flathub {1} 2>/dev/null; printf "\nFlathub: https://flathub.org/apps/%s\n" {1}; } | sed -E '\''s@(https?://[^[:space:]]+)@\x1b]8;;\1\x1b\\\1\x1b]8;;\x1b\\@g'\'
+  --preview-label='alt-p: toggle preview, alt-j/k: scroll, tab: multi-select, ctrl-o: open Flathub page'
   --preview-label-pos='bottom'
   --preview-window 'down:65%:wrap'
   --bind 'alt-p:toggle-preview'
   --bind 'alt-d:preview-half-page-down,alt-u:preview-half-page-up'
   --bind 'alt-k:preview-up,alt-j:preview-down'
+  --bind 'ctrl-o:execute-silent:nohup xdg-open "https://flathub.org/apps/{1}" >/dev/null 2>&1 &'
   --color 'pointer:green,marker:green'
   --header 'Flatpak Installer (Flathub) - Select with Tab, Enter to install'
   --prompt 'Package: '
@@ -24,7 +25,8 @@ fi
 
 if ! flatpak remote-list | grep -q '^flathub'; then
   echo "Error: flathub remote not found."
-  echo "Add it with: flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+  flathub_repo_url="https://dl.flathub.org/repo/flathub.flatpakrepo"
+  printf 'Add it with: flatpak remote-add --if-not-exists flathub \e]8;;%s\e\\%s\e]8;;\e\\\n' "$flathub_repo_url" "$flathub_repo_url"
   exit 1
 fi
 

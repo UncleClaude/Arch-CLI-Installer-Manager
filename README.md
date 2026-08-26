@@ -11,6 +11,8 @@ Welcome to **Arch CLI Installer & Manager**, a TUI installer and manager for pac
 *   **flatmanage:** Removes installed Flatpak packages.
 *   **installer:** Main menu to pick between the three fetchers above, or an "Installed packages" submenu to manage what's already installed; returns to the menu after each action finishes or is cancelled.
 
+In any package list, press `ctrl-o` to open the highlighted package's homepage (or its Flathub page) in your default browser, via `xdg-open`. URLs shown in the preview pane are also rendered as clickable terminal hyperlinks in terminals that support them (kitty, foot, wezterm, iTerm2, etc.).
+
 # 1.1: Installation
 
 ### Build and install locally (recommended)

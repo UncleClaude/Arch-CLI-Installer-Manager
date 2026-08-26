@@ -3,13 +3,14 @@
 
 fzf_args=(
   --multi
-  --preview 'pacman -Si {1} 2>/dev/null'
-  --preview-label='alt-p: toggle preview, alt-j/k: scroll, tab: multi-select'
+  --preview 'pacman -Si {1} 2>/dev/null | sed -E '\''s@(https?://[^[:space:]]+)@\x1b]8;;\1\x1b\\\1\x1b]8;;\x1b\\@g'\'
+  --preview-label='alt-p: toggle preview, alt-j/k: scroll, tab: multi-select, ctrl-o: open homepage'
   --preview-label-pos='bottom'
   --preview-window 'down:65%:wrap'
   --bind 'alt-p:toggle-preview'
   --bind 'alt-d:preview-half-page-down,alt-u:preview-half-page-up'
   --bind 'alt-k:preview-up,alt-j:preview-down'
+  --bind 'ctrl-o:execute-silent:u=$(pacman -Si {1} 2>/dev/null | grep -m1 "^URL" | sed "s/^[^:]*:[[:space:]]*//"); [ -n "$u" ] && [ "$u" != None ] && nohup xdg-open "$u" >/dev/null 2>&1 &'
   --color 'pointer:green,marker:green'
   --header 'Package Installer - Select with Tab, Enter to install'
   --prompt 'Package: '

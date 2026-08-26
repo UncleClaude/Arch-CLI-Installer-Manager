@@ -11,6 +11,7 @@ optdepends=(
   'yay: for AUR package installation'
   'flatpak: for Flatpak package installation'
   'mlocate: for updating the locate database after installation'
+  'xdg-utils: for opening package homepages with ctrl-o'
 )
 provides=('omarchy-installers' 'archie')
 conflicts=('omarchy-installers' 'archie')
