@@ -32,5 +32,5 @@ if [[ -n "$pkg_ids" ]]; then
   flatpak uninstall -y "${pkgs[@]}"
 
   echo
-  gum spin --spinner "globe" --title "Done! Press any key to close..." -- bash -c 'read -n 1 -s'
+  read -rp "Done! Press Enter to continue..."
 fi

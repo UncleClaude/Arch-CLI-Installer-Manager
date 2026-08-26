@@ -26,8 +26,13 @@ fi
 
 echo
 if gum confirm "Clear the pacman cache of uninstalled packages?"; then
+  # Interrupted downloads leave stray download-XXXXXX temp files behind;
+  # pacman -Sc chokes trying to read them as packages, so clear those first.
+  while IFS= read -r cache_dir; do
+    sudo find "$cache_dir" -maxdepth 1 -name 'download-*' -delete
+  done < <(pacman-conf CacheDir)
   sudo pacman -Sc --noconfirm
 fi
 
 echo
-gum spin --spinner "globe" --title "Done! Press any key to close..." -- bash -c 'read -n 1 -s'
+read -rp "Done! Press Enter to continue..."

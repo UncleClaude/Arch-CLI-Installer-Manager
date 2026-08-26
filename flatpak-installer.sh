@@ -38,5 +38,5 @@ if [[ -n "$pkg_ids" ]]; then
   echo "$pkg_ids" | tr '\n' ' ' | xargs flatpak install -y flathub
 
   echo
-  gum spin --spinner "globe" --title "Done! Press any key to close..." -- bash -c 'read -n 1 -s'
+  read -rp "Done! Press Enter to continue..."
 fi
