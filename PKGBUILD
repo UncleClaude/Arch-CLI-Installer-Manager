@@ -1,6 +1,6 @@
 # Maintainer: UncleClaude
 pkgname=arch-cli-installer-manager
-pkgver=1.0.0
+pkgver=1.0.5
 pkgrel=1
 pkgdesc="Arch CLI Installer & Manager - TUI installer and manager for pacman, AUR, and Flatpak packages on Arch-based distros"
 arch=('any')
